@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Harsh Yedur | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --sidebar-bg: #f8fafc;      /* Cool Slate Gray */
+            --main-bg: #ffffff;
+            --accent-blue: #2563eb;     /* Electric Blue */
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #f1f5f9;
+            padding: 20px;
+            color: var(--text-dark);
+        }
+
+        .resume-card {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: var(--main-bg);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            display: flex; /* Creates the Dashboard Split */
+            min-height: 1100px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* ===== SIDEBAR (Dashboard Panel) ===== */
+        .sidebar {
+            width: 300px;
+            background: var(--sidebar-bg);
+            padding: 40px 30px;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 20px; /* Modern Squircle */
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid var(--main-bg);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .sidebar h2 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin: 30px 0 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+
+        /* ===== MAIN COLUMN ===== */
+        .main-column {
+            flex: 1;
+            padding: 60px 50px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 42px;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+        }
+
+        header p {
+            color: var(--accent-blue);
+            font-weight: 600;
+            font-size: 18px;
+            margin: 5px 0 20px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        /* TAGS & COMPONENTS */
+        .skill-tag {
+            display: inline-block;
+            background: #ffffff;
+            color: var(--text-dark);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            margin: 0 5px 8px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .project-item { margin-bottom: 35px; }
+
+        .project-item u, .project-item b {
+            font-size: 18px;
+            color: var(--text-dark);
+            text-decoration-color: var(--accent-blue);
+        }
+
+        .date-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-muted);
+            background: #f1f5f9;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+
+        p, li {
+            line-height: 1.7;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        a { color: inherit; text-decoration: none; font-weight: 600; }
+        a:hover { color: var(--accent-blue); }
+
+        @media (max-width: 850px) {
+            .resume-card { flex-direction: column; }
+            .sidebar { width: auto; border-right: none; border-bottom: 1px solid var(--border-color); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="resume-card">
+    <aside class="sidebar">
+        <img src="harsh_pic.jpg" alt="Harsh Yedur" class="profile-pic">
+        
+        <h2>Technical Stack</h2>
+        <div class="skills-container">
+            <span class="skill-tag">Flutter</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">HTML5/CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Git</span>
+        </div>
+
+        <h2>Education</h2>
+        <p><b>B.Tech CS</b><br>WIT Solapur<br>2024 — 2027</p>
+
+        <h2>Professional Links</h2>
+        <p>🔗 <a href="https://github.com/Harshyedur">GitHub Profile</a></p>
+        <p>🔗 <a href="https://www.linkedin.com/in/harsh-yedur-30a8602a6">LinkedIn</a></p>
+        
+        <h2>Languages</h2>
+        <p>English, Marathi, Hindi</p>
+    </aside>
+
+    <main class="main-column">
+        <header>
+            <h1>Harsh Yedur</h1>
+            <p>Software Engineering Student</p>
+            <div class="contact-grid">
+                <span>📍 Solapur, Maharashtra</span>
+                <span>📧 Harshyedur@gmail.com</span>
+                <span>📞 +91 9156542250</span>
+            </div>
+        </header>
+
+        <section class="section">
+            <span class="section-title">Professional Summary</span>
+            <p>Ambitious Software Engineering student with a focus on high-impact mobile development and AI integration. Proven success in leading technical teams during national-level hackathons and organizing large-scale college events.</p>
+        </section>
+
+        <section class="section">
+            <span class="section-title">Key Experience & Projects</span>
+            
+            <div class="project-item">
+                <u>Smart India Hackathon (SIH) | Lead Developer</u> <span class="date-label">2025</span>
+                <p>Engineered an offline-first Flutter application integrating <u>AI crop diagnostics</u> and a <u>P2P machinery rental marketplace</u>. Developed robust local data synchronization to ensure 100% utility in low-connectivity rural regions.</p>
+            </div>
+
+            <div class="project-item">
+                <b>Management System</b> <span class="date-label">Web Project</span>
+                <ul>
+                    <li>Designed a full-stack administrative platform for booking and logistics management.</li>
+                    <li>Optimized database performance through normalized MySQL schema design.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <b>Hustle Hoopers</b> <span class="date-label">Event Lead</span>
+                <p>Directed a college-wide 3v3 basketball tournament, managing registrations, logistics, and on-ground operations for a multi-day sports event.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <span class="section-title">Core Competencies</span>
+            <div class="skills-container">
+                <span class="skill-tag">Agile Development</span>
+                <span class="skill-tag">P2P Architecture</span>
+                <span class="skill-tag">Team Leadership</span>
+                <span class="skill-tag">UI/UX Logic</span>
+            </div>
+        </section>
+    </main>
+</div>
+
+</body>
+</html>
