@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - My Website</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* This hides the form initially */
+        #contactForm { display: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MyWebsite</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#" onclick="showForm()" class="active">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-section">
+        <h2>Get In Touch</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="from_name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="from_email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        <div class="map-container">
+            <h3>Our Location</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3801.447087858102!2d75.92131907517173!3d17.6763784832595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc5da64030d07e3%3A0x66948332168923a1!2sWalchand%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1700000000000" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 MyWebsite. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        emailjs.init("J-Qzkt1F3qTM4seCJ");
+
+        // NEW FUNCTION: This makes the form appear when the link is clicked
+        function showForm() {
+            document.getElementById('contactForm').style.display = 'block';
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const serviceID = 'service_yf94i3n';
+            const templateID = 'template_8qsvx3r';
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    alert('Success! Your message has been sent.');
+                    this.reset();
+                }, (err) => {
+                    alert('Error: ' + JSON.stringify(err));
+                });
+        });
+    </script>
+</body>
+</html>
